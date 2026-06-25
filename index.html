@@ -141,6 +141,22 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 #section-tractio .trac-footbar { background: #111; padding: 32px 40px; display: flex; justify-content: space-between; align-items: center; }
 #section-tractio .trac-footbar img { height: 64px; }
 #section-tractio .trac-footbar a { color: #A1A1A6; cursor: pointer; font-size: 14px; }
+#section-tractio .trac-footer { background: #1C1C1E; border-top: 1px solid rgba(255,255,255,0.06); padding: 64px 0 0; }
+#section-tractio .trac-footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 48px; }
+#section-tractio .trac-footer-brand img { height: 52px; margin-bottom: 18px; }
+#section-tractio .trac-footer-brand p { color: #A1A1A6; font-size: 15px; max-width: 320px; }
+#section-tractio .trac-footer-col h4 { color: #F97316; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 18px; }
+#section-tractio .trac-footer-col ul { list-style: none; }
+#section-tractio .trac-footer-col li { margin-bottom: 12px; }
+#section-tractio .trac-footer-col a { color: #A1A1A6; font-size: 15px; cursor: pointer; transition: color .2s; }
+#section-tractio .trac-footer-col a:hover { color: #F97316; }
+#section-tractio .trac-footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 0; text-align: center; }
+#section-tractio .trac-footer-bottom p { color: #6E6E73; font-size: 13px; }
+@media (max-width: 768px) {
+  #section-tractio .trac-footer { padding-top: 48px; }
+  #section-tractio .trac-footer-top { grid-template-columns: 1fr; gap: 36px; text-align: center; }
+  #section-tractio .trac-footer-brand p { margin: 0 auto; }
+}
 #section-tractio .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(4px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 24px; opacity: 0; transition: opacity .25s; }
 #section-tractio .modal-overlay.open { display: flex; opacity: 1; }
 #section-tractio .modal { background: #2A2A2A; border-top: 4px solid #F97316; border-radius: 12px; width: 100%; max-width: 520px; padding: 36px; position: relative; max-height: 90vh; overflow-y: auto; }
@@ -319,9 +335,33 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <button class="btn btn-dark reveal" onclick="document.querySelector('#section-tractio .pricing').scrollIntoView({behavior:'smooth'});">Choose Your System</button>
     </div>
   </section>
-  <div class="trac-footbar">
-    <img src="tractio-logo.png" alt="Tractio" />
-  </div>
+  <footer class="trac-footer">
+    <div class="container">
+      <div class="trac-footer-top">
+        <div class="trac-footer-brand">
+          <img src="tractio-logo.png" alt="Tractio" />
+          <p>AI call handling for home-service businesses.</p>
+        </div>
+        <div class="trac-footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a onclick="document.querySelector('#section-tractio .how').scrollIntoView({behavior:'smooth'});">How It Works</a></li>
+            <li><a onclick="document.querySelector('#section-tractio .pricing').scrollIntoView({behavior:'smooth'});">Choose Your System</a></li>
+            <li><a data-trac-open-quote>Book a Call</a></li>
+          </ul>
+        </div>
+        <div class="trac-footer-col">
+          <h4>Email</h4>
+          <ul>
+            <li><a href="mailto:hello.tractio@gmail.com">hello.tractio@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="trac-footer-bottom">
+        <p>© 2026 Tractio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
   <div class="modal-overlay" id="trac-quoteModal" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true">
       <button class="modal-close" id="trac-modalClose" aria-label="Close">×</button>
