@@ -446,8 +446,8 @@ function initTractio() {
     }
     function init() {
       resize();
-      const count = Math.min(80, Math.floor((w*h)/15000));
-      dots = Array.from({length:count}, () => ({ x: Math.random()*w, y: Math.random()*h, r: Math.random()*1.6 + 0.4, vx: (Math.random()-0.5)*0.25, vy: (Math.random()-0.5)*0.25, a: Math.random()*0.5 + 0.2 }));
+      const count = Math.min(120, Math.floor((w*h)/11000));
+      dots = Array.from({length:count}, () => ({ x: Math.random()*w, y: Math.random()*h, r: Math.random()*2.4 + 1.2, vx: (Math.random()-0.5)*0.25, vy: (Math.random()-0.5)*0.25, a: Math.random()*0.4 + 0.55 }));
     }
     function tick() {
       ctx.clearRect(0,0,w,h);
