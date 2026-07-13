@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Tractio — Your Business, Running on Autopilot</title>
-<meta name="description" content="Tractio builds your custom call-handling system — an AI phone agent that answers every call 24/7, qualifies leads, books appointments, and flags emergencies to you in real time." />
+<meta name="description" content="Tractio builds your custom call-handling system — an AI phone agent that answers every call 24/7, qualifies leads, books appointments, and flags emergencies to you in real time. Plus clean, custom websites for small local businesses." />
 <link rel="icon" type="image/png" href="tractio-logo-2.png" />
 <meta property="og:title" content="Tractio — Your Business, Running on Autopilot">
-<meta property="og:description" content="Tractio builds your custom call-handling system — an AI phone agent that answers every call 24/7, qualifies leads, books appointments, and flags emergencies to you in real time.">
+<meta property="og:description" content="Tractio builds your custom call-handling system — an AI phone agent that answers every call 24/7, qualifies leads, books appointments, and flags emergencies to you in real time. Plus clean, custom websites for small local businesses.">
 <meta property="og:image" content="https://tractio.co/tractio-logo.png">
 <meta property="og:url" content="https://tractio.co">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -126,6 +126,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 #section-tractio .price-features li::before { content: "✓"; color: #F97316; font-weight: 700; flex-shrink: 0; }
 #section-tractio .price-card .btn { width: 100%; }
 #section-tractio .pricing-foot { text-align: center; color: #6E6E73; font-size: 14px; margin-top: 36px; }
+#section-tractio .hero-also { margin-top: 22px; color: #A1A1A6; font-size: 15px; }
+#section-tractio .hero-also a { color: #F97316; cursor: pointer; font-weight: 500; white-space: nowrap; }
+#section-tractio .websites { background: #1C1C1E; }
+#section-tractio .web-lead { max-width: 640px; margin: 0 auto 44px; text-align: center; color: #A1A1A6; font-size: 18px; line-height: 1.7; }
+#section-tractio .web-card { max-width: 520px; margin: 0 auto; background: #2A2A2A; border: 1px solid rgba(249,115,22,0.35); border-radius: 12px; padding: 40px; text-align: center; }
+#section-tractio .web-card h3 { font-size: 22px; font-weight: 600; margin-bottom: 14px; }
+#section-tractio .web-card .price-amount { font-size: 32px; font-weight: 700; margin-bottom: 4px; }
+#section-tractio .web-card .price-sub { color: #A1A1A6; font-size: 14px; margin-bottom: 28px; }
+#section-tractio .web-card .price-features { text-align: left; max-width: 380px; margin: 0 auto 28px; }
+#section-tractio .web-card .btn { width: 100%; }
+#section-tractio .web-note { color: #6E6E73; font-size: 14px; margin-top: 20px; }
 #section-tractio .faq { background: #1C1C1E; }
 #section-tractio .faq-list { max-width: 800px; margin: 0 auto; }
 #section-tractio .faq-item { background: #2A2A2A; border-radius: 8px; margin-bottom: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.04); transition: border-color .25s; }
@@ -217,6 +228,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <a onclick="document.querySelector('#section-tractio .how').scrollIntoView({behavior:'smooth'});" style="cursor:pointer;" class="btn btn-outline btn-lg">See How It Works</a>
       </div>
       <p class="fineprint reveal">Custom built for your business. No templates. No contracts.</p>
+      <p class="hero-also reveal">We also build custom websites for small local businesses. <a onclick="document.querySelector('#section-tractio .websites').scrollIntoView({behavior:'smooth'});">See websites →</a></p>
     </div>
   </section>
   <section class="problem">
@@ -314,6 +326,25 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </div>
       </div>
       <p class="pricing-foot reveal">Setup is one-time. Cancel anytime.</p>
+    </div>
+  </section>
+  <section class="websites">
+    <div class="container">
+      <div class="section-head reveal"><span class="label">Websites</span><h2>Need a Website Too?</h2></div>
+      <p class="web-lead reveal">Beyond call handling, we build clean, custom websites for small local businesses — designed from scratch, mobile-friendly, and fast. No cookie-cutter templates, just a site that actually represents your business and turns visitors into customers.</p>
+      <div class="web-card reveal">
+        <h3>Custom Website</h3>
+        <div class="price-amount">Starting at $500</div>
+        <p class="price-sub">Built for your business, not a template.</p>
+        <ul class="price-features">
+          <li>Custom design tailored to your brand</li>
+          <li>Fully mobile-friendly and fast-loading</li>
+          <li>Clear layout that turns visitors into leads</li>
+          <li>Built from scratch — no generic templates</li>
+        </ul>
+        <button class="btn btn-primary" data-trac-open-quote>Get a Website Quote</button>
+        <p class="web-note">Need changes later? Updates are available anytime, quoted per request.</p>
+      </div>
     </div>
   </section>
   <section class="faq">
