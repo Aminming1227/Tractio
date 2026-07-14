@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tractio — Your Business, Running on Autopilot</title>
-<meta name="description" content="Tractio builds your custom call-handling system — an AI phone agent that answers every call 24/7, qualifies leads, books appointments, and flags emergencies to you in real time. Plus clean, custom websites for small local businesses." />
+<title>Tractio — AI Phone Agents & Custom Websites for Small Businesses</title>
+<meta name="description" content="Tractio helps small businesses win more customers two ways: AI phone agents that answer every call 24/7, qualify leads, and book jobs — and clean, custom, mobile-friendly websites that get you found online." />
 <link rel="icon" type="image/png" href="tractio-logo-2.png" />
-<meta property="og:title" content="Tractio — Your Business, Running on Autopilot">
-<meta property="og:description" content="Tractio builds your custom call-handling system — an AI phone agent that answers every call 24/7, qualifies leads, books appointments, and flags emergencies to you in real time. Plus clean, custom websites for small local businesses.">
+<meta property="og:title" content="Tractio — AI Phone Agents & Custom Websites for Small Businesses">
+<meta property="og:description" content="Tractio helps small businesses win more customers two ways: AI phone agents that answer every call 24/7, qualify leads, and book jobs — and clean, custom, mobile-friendly websites that get you found online.">
 <meta property="og:image" content="https://tractio.co/tractio-logo.png">
 <meta property="og:url" content="https://tractio.co">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -126,9 +126,27 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 #section-tractio .price-features li::before { content: "✓"; color: #F97316; font-weight: 700; flex-shrink: 0; }
 #section-tractio .price-card .btn { width: 100%; }
 #section-tractio .pricing-foot { text-align: center; color: #6E6E73; font-size: 14px; margin-top: 36px; }
-#section-tractio .hero-also { margin-top: 22px; color: #A1A1A6; font-size: 15px; }
-#section-tractio .hero-also a { color: #F97316; cursor: pointer; font-weight: 500; white-space: nowrap; }
-#section-tractio .websites { background: #1C1C1E; }
+/* ===== Chooser hero ===== */
+#section-tractio .chooser { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 780px; margin: 8px auto 0; }
+#section-tractio .choose-card { background: #2A2A2A; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 34px 30px; text-align: left; cursor: pointer; transition: transform .2s, border-color .2s, box-shadow .2s; display: flex; flex-direction: column; }
+#section-tractio .choose-card:hover { transform: translateY(-4px); border-color: #F97316; box-shadow: 0 14px 44px rgba(0,0,0,0.38); }
+#section-tractio .choose-icon { width: 52px; height: 52px; border-radius: 12px; background: rgba(249,115,22,0.12); display: flex; align-items: center; justify-content: center; color: #F97316; margin-bottom: 20px; }
+#section-tractio .choose-card h3 { font-size: 21px; font-weight: 600; margin-bottom: 10px; line-height: 1.2; }
+#section-tractio .choose-card p { color: #A1A1A6; font-size: 15px; margin-bottom: 22px; flex: 1; }
+#section-tractio .choose-go { color: #F97316; font-weight: 600; font-size: 15px; }
+@media (max-width: 640px) { #section-tractio .chooser { grid-template-columns: 1fr; } }
+/* ===== Service header band ===== */
+#section-tractio .svc-header { text-align: center; padding: 76px 0 12px; }
+#section-tractio .svc-header.svc-phone { background: #2A2A2A; }
+#section-tractio .svc-header.svc-web { background: #1C1C1E; }
+#section-tractio .svc-eyebrow { display: inline-block; color: #F97316; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 16px; }
+#section-tractio .svc-header h2 { font-size: clamp(30px,4.2vw,48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; max-width: 800px; margin: 0 auto 18px; }
+#section-tractio .svc-header p { color: #A1A1A6; font-size: 18px; max-width: 640px; margin: 0 auto; }
+/* ===== Website service ===== */
+#section-tractio .web-problem { background: #2A2A2A; }
+#section-tractio .web-solution { background: #1C1C1E; }
+#section-tractio .web-how { background: #2A2A2A; }
+#section-tractio .web-pricing { background: #1C1C1E; }
 #section-tractio .web-lead { max-width: 640px; margin: 0 auto 44px; text-align: center; color: #A1A1A6; font-size: 18px; line-height: 1.7; }
 #section-tractio .web-card { max-width: 520px; margin: 0 auto; background: #2A2A2A; border: 1px solid rgba(249,115,22,0.35); border-radius: 12px; padding: 40px; text-align: center; }
 #section-tractio .web-card h3 { font-size: 22px; font-weight: 600; margin-bottom: 14px; }
@@ -221,14 +239,30 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <canvas id="trac-particles"></canvas>
     <div class="hero-content">
       <img src="tractio-logo.png" alt="Tractio" class="hero-logo reveal" />
-      <h1 class="reveal">Your Business, Running on Autopilot.</h1>
-      <p class="sub reveal">Tractio builds your custom call-handling system — an AI phone agent that answers every call 24/7, qualifies leads, books appointments, and flags emergencies to you in real time.</p>
-      <div class="hero-buttons reveal">
-        <button class="btn btn-primary btn-lg" onclick="document.querySelector('#section-tractio .pricing').scrollIntoView({behavior:'smooth'});">Choose Your System</button>
-        <a onclick="document.querySelector('#section-tractio .how').scrollIntoView({behavior:'smooth'});" style="cursor:pointer;" class="btn btn-outline btn-lg">See How It Works</a>
+      <h1 class="reveal">Tractio Helps Your Business Win More Customers — Two Ways.</h1>
+      <p class="sub reveal">Whether it's the calls you're missing or the customers who can't find you online, we build the system that fixes it. Pick what your business needs.</p>
+      <div class="chooser reveal">
+        <div class="choose-card" onclick="document.querySelector('#phone-agent').scrollIntoView({behavior:'smooth'});">
+          <div class="choose-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg></div>
+          <h3>AI Phone Agent</h3>
+          <p>Never miss a call again. An AI agent answers 24/7, qualifies leads, and books jobs straight onto your calendar.</p>
+          <span class="choose-go">Never miss a call again →</span>
+        </div>
+        <div class="choose-card" onclick="document.querySelector('#websites').scrollIntoView({behavior:'smooth'});">
+          <div class="choose-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <h3>Website Building</h3>
+          <p>Get found online. A clean, custom, mobile-friendly website — no templates — that makes your business look professional.</p>
+          <span class="choose-go">Get found online →</span>
+        </div>
       </div>
       <p class="fineprint reveal">Custom built for your business. No templates. No contracts.</p>
-      <p class="hero-also reveal">We also build custom websites for small local businesses. <a onclick="document.querySelector('#section-tractio .websites').scrollIntoView({behavior:'smooth'});">See websites →</a></p>
+    </div>
+  </section>
+  <section class="svc-header svc-phone" id="phone-agent">
+    <div class="container">
+      <span class="svc-eyebrow reveal">Service 01 — AI Phone Agent</span>
+      <h2 class="reveal">Never Miss a Call Again.</h2>
+      <p class="reveal">A custom AI phone agent that answers every call 24/7, qualifies leads, books jobs onto your calendar, and flags emergencies in real time.</p>
     </div>
   </section>
   <section class="problem">
@@ -328,10 +362,53 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       <p class="pricing-foot reveal">Setup is one-time. Cancel anytime.</p>
     </div>
   </section>
-  <section class="websites">
+  <section class="svc-header svc-web" id="websites">
     <div class="container">
-      <div class="section-head reveal"><span class="label">Websites</span><h2>Need a Website Too?</h2></div>
-      <p class="web-lead reveal">Beyond call handling, we build clean, custom websites for small local businesses — designed from scratch, mobile-friendly, and fast. No cookie-cutter templates, just a site that actually represents your business and turns visitors into customers.</p>
+      <span class="svc-eyebrow reveal">Service 02 — Website Building</span>
+      <h2 class="reveal">Get Found Online.</h2>
+      <p class="reveal">A clean, custom, mobile-friendly website — built from scratch, no templates — that makes your small business look professional and brings customers to your door.</p>
+    </div>
+  </section>
+  <section class="web-problem">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="label">The Problem</span>
+        <h2>No Website? You're Invisible to Customers Searching for You.</h2>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card reveal"><h3>They Can't Find You</h3><p>Customers search online before they buy. If you don't show up, they land on a competitor who does — and you never even knew they were looking.</p></div>
+        <div class="problem-card reveal"><h3>You Look Less Legit</h3><p>No website — or an outdated one — makes even a great business look small or unreliable. First impressions happen before anyone calls.</p></div>
+        <div class="problem-card reveal"><h3>Templates Fall Flat</h3><p>Cookie-cutter drag-and-drop sites look generic, load slowly, and break on phones — where most of your customers actually are.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="web-solution">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="label">The Solution</span>
+        <h2>A Custom Website Built to Win Customers.</h2>
+      </div>
+      <div class="solution-grid">
+        <div class="feature-card reveal"><div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><h3>Custom Designed for You</h3><p>Built from scratch around your brand and your business — not a template everyone else is using. A site that actually looks like you.</p></div>
+        <div class="feature-card reveal"><div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div><h3>Mobile-Friendly &amp; Fast</h3><p>Looks sharp and loads fast on every phone, tablet, and desktop — because that's where your customers are searching from.</p></div>
+        <div class="feature-card reveal"><div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h3>Built to Get Found</h3><p>Clean structure and clear pages so customers searching for what you offer actually land on you — and know how to reach you.</p></div>
+        <div class="feature-card reveal"><div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h3>Turns Visitors Into Leads</h3><p>Clear calls to action, contact buttons, and layout that guides visitors to book, call, or message you — not just browse and bounce.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="web-how">
+    <div class="container">
+      <div class="section-head reveal"><span class="label">How It Works</span><h2>From First Chat to Live in Days.</h2></div>
+      <div class="steps">
+        <div class="step reveal"><div class="step-num">1</div><h3>We Learn Your Business</h3><p>A quick call to understand what you do, who you serve, and what you want your site to say about you.</p></div>
+        <div class="step reveal"><div class="step-num">2</div><h3>We Build Your Site</h3><p>We design and build your custom website from scratch. You review it and request changes before it goes live.</p></div>
+        <div class="step reveal"><div class="step-num">3</div><h3>You Go Live</h3><p>We launch your site and hand it over. Customers searching for you can finally find you — and reach you.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="web-pricing">
+    <div class="container">
+      <div class="section-head reveal"><span class="label">Website Pricing</span><h2>One Custom Site. Simple Pricing.</h2></div>
       <div class="web-card reveal">
         <h3>Custom Website</h3>
         <div class="price-amount">Starting at $500</div>
@@ -361,9 +438,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   </section>
   <section class="final-cta">
     <div class="container">
-      <h2 class="reveal">Stop Losing Leads to Businesses That Move Faster.</h2>
-      <p class="reveal">Pick the plan that fits your business and get set up in days, not weeks.</p>
-      <button class="btn btn-dark reveal" onclick="document.querySelector('#section-tractio .pricing').scrollIntoView({behavior:'smooth'});">Choose Your System</button>
+      <h2 class="reveal">Stop Losing Customers to Businesses That Move Faster.</h2>
+      <p class="reveal">Whether you need calls answered or a website that gets you found, we'll build it — in days, not weeks.</p>
+      <button class="btn btn-dark reveal" data-trac-open-quote>Book a Free Call</button>
     </div>
   </section>
   <footer class="trac-footer">
@@ -375,8 +452,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <div class="trac-footer-col">
           <h4>Quick Links</h4>
           <ul>
-            <li><a onclick="document.querySelector('#section-tractio .how').scrollIntoView({behavior:'smooth'});">How It Works</a></li>
-            <li><a onclick="document.querySelector('#section-tractio .pricing').scrollIntoView({behavior:'smooth'});">Choose Your System</a></li>
+            <li><a onclick="document.querySelector('#phone-agent').scrollIntoView({behavior:'smooth'});">AI Phone Agent</a></li>
+            <li><a onclick="document.querySelector('#websites').scrollIntoView({behavior:'smooth'});">Website Building</a></li>
             <li><a data-trac-open-quote>Book a Call</a></li>
           </ul>
         </div>
