@@ -146,9 +146,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 #section-tractio .web-problem { background: #2A2A2A; }
 #section-tractio .web-solution { background: #1C1C1E; }
 #section-tractio .web-how { background: #2A2A2A; }
-#section-tractio .web-pricing { background: #1C1C1E; }
+#section-tractio .web-included { background: #1C1C1E; }
+#section-tractio .web-included .solution-grid { grid-template-columns: repeat(3,1fr); max-width: none; }
+#section-tractio .web-pricing { background: #2A2A2A; }
 #section-tractio .web-lead { max-width: 640px; margin: 0 auto 44px; text-align: center; color: #A1A1A6; font-size: 18px; line-height: 1.7; }
-#section-tractio .web-card { max-width: 520px; margin: 0 auto; background: #2A2A2A; border: 1px solid rgba(249,115,22,0.35); border-radius: 12px; padding: 40px; text-align: center; }
+#section-tractio .web-card { max-width: 520px; margin: 0 auto; background: #1C1C1E; border: 1px solid rgba(249,115,22,0.35); border-radius: 12px; padding: 40px; text-align: center; }
 #section-tractio .web-card h3 { font-size: 22px; font-weight: 600; margin-bottom: 14px; }
 #section-tractio .web-card .price-amount { font-size: 32px; font-weight: 700; margin-bottom: 4px; }
 #section-tractio .web-card .price-sub { color: #A1A1A6; font-size: 14px; margin-bottom: 28px; }
@@ -406,6 +408,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
       </div>
     </div>
   </section>
+  <section class="web-included">
+    <div class="container">
+      <div class="section-head reveal"><span class="label">What's Included</span><h2>Everything You Need to Get Online.</h2></div>
+      <div class="solution-grid">
+        <div class="feature-card reveal"><div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3>A Custom Website</h3><p>A clean, custom, mobile-friendly website built from scratch around your business — no cookie-cutter templates.</p></div>
+        <div class="feature-card reveal"><div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div><h3>A Simple Logo Included</h3><p>A simple logo is included to get you looking sharp — or we'll use the logo you already have if you've got one.</p></div>
+        <div class="feature-card reveal"><div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>We Bring Your Content to Life</h3><p>You provide your own text, photos, and business info — we bring it to life on the page and help polish and organize it.</p></div>
+      </div>
+    </div>
+  </section>
   <section class="web-pricing">
     <div class="container">
       <div class="section-head reveal"><span class="label">Website Pricing</span><h2>One Custom Site. Simple Pricing.</h2></div>
@@ -414,10 +426,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <div class="price-amount">Starting at $500</div>
         <p class="price-sub">Built for your business, not a template.</p>
         <ul class="price-features">
-          <li>Custom design tailored to your brand</li>
-          <li>Fully mobile-friendly and fast-loading</li>
-          <li>Clear layout that turns visitors into leads</li>
-          <li>Built from scratch — no generic templates</li>
+          <li>Clean, custom, mobile-friendly website</li>
+          <li>Simple logo included — or we use yours</li>
+          <li>You provide text &amp; photos; we bring it to life</li>
+          <li>We help polish and organize your content</li>
         </ul>
         <button class="btn btn-primary" data-trac-open-quote>Get a Website Quote</button>
         <p class="web-note">Need changes later? Updates are available anytime, quoted per request.</p>
