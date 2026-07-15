@@ -616,7 +616,26 @@ function initTractio() {
   };
   const serviceEl = document.getElementById('trac-service');
   let currentService = 'Phone Agent';
+  function resetForm() {
+    const form = document.getElementById('trac-quoteForm');
+    if (form) form.reset();
+    // Clear any prior success/error state so the wizard is fresh each open
+    const success = document.getElementById('trac-formSuccess');
+    const error = document.getElementById('trac-formError');
+    if (success) success.style.display = 'none';
+    if (error) error.style.display = 'none';
+    // Clear time-slot selection and validation flags
+    if (callSlotsEl) callSlotsEl.querySelectorAll('.trac-slot.selected').forEach(s => s.classList.remove('selected'));
+    if (callTimeEl) callTimeEl.value = '';
+    root.querySelectorAll('#trac-quoteForm .form-group.invalid').forEach(g => g.classList.remove('invalid'));
+    // Reset the Turnstile widget so a fresh token is required for the new booking
+    if (window.turnstile && typeof window.turnstile.reset === 'function') {
+      try { window.turnstile.reset(); } catch (e) {}
+    }
+    showStep(1);
+  }
   function openModal(service) {
+    resetForm();
     currentService = SERVICE_ENDPOINTS[service] ? service : 'Phone Agent';
     if (serviceEl) serviceEl.value = currentService;
     modal.classList.add('open');
