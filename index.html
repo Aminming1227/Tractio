@@ -435,7 +435,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
           <li>You provide text &amp; photos; we bring it to life</li>
           <li>We help polish and organize your content</li>
         </ul>
-        <button class="btn btn-primary" data-trac-open-quote>Get a Website Quote</button>
+        <button class="btn btn-primary" data-trac-open-quote data-trac-service="Website">Get a Website Quote</button>
         <p class="web-note">Need changes later? Updates are $50 each — text, photos, hours, whatever you need.</p>
       </div>
     </div>
@@ -489,6 +489,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <div class="modal" role="dialog" aria-modal="true">
       <button class="modal-close" id="trac-modalClose" aria-label="Close">×</button>
       <form id="trac-quoteForm" novalidate>
+        <input type="hidden" name="service" id="trac-service" value="Phone Agent" />
         <div class="progress">
           <div class="progress-bar active" data-step="1"></div>
           <div class="progress-bar" data-step="2"></div>
@@ -607,7 +608,17 @@ function initTractio() {
   const callDateEl = document.getElementById('trac-callDate');
   const callTimeEl = document.getElementById('trac-callTime');
   const callSlotsEl = document.getElementById('trac-callSlots');
-  function openModal() {
+  // Per-service Formspree endpoints. The modal is shared; which CTA opened it
+  // decides where the lead is submitted and which service is recorded.
+  const SERVICE_ENDPOINTS = {
+    'Phone Agent': 'https://formspree.io/f/xzdwkydv',
+    'Website': 'https://formspree.io/f/xwvgpybd'
+  };
+  const serviceEl = document.getElementById('trac-service');
+  let currentService = 'Phone Agent';
+  function openModal(service) {
+    currentService = SERVICE_ENDPOINTS[service] ? service : 'Phone Agent';
+    if (serviceEl) serviceEl.value = currentService;
     modal.classList.add('open');
     modal.setAttribute('aria-hidden','false');
     document.body.style.overflow = 'hidden';
@@ -623,7 +634,7 @@ function initTractio() {
     }
   }
   function closeModal() { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; }
-  root.querySelectorAll('[data-trac-open-quote]').forEach(b => b.addEventListener('click', openModal));
+  root.querySelectorAll('[data-trac-open-quote]').forEach(b => b.addEventListener('click', () => openModal(b.dataset.tracService || 'Phone Agent')));
   modalClose.addEventListener('click', closeModal);
   modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
@@ -665,8 +676,6 @@ function initTractio() {
     f.addEventListener('input', () => f.closest('.form-group').classList.remove('invalid'));
     f.addEventListener('change', () => f.closest('.form-group').classList.remove('invalid'));
   });
-
-  const QUOTE_ENDPOINT = 'https://formspree.io/f/xzdwkydv';
 
   // Build Your Own calculator — stashes the selection and routes through the
   // existing quote modal so Formspree gets the required name/email/phone
@@ -739,7 +748,8 @@ function initTractio() {
       data._subject = 'Tractio — Build Your Own quote request';
     }
     try {
-      const res = await fetch(QUOTE_ENDPOINT, { method: 'POST', headers: {'Accept':'application/json','Content-Type':'application/json'}, body: JSON.stringify(data) });
+      const endpoint = SERVICE_ENDPOINTS[currentService] || SERVICE_ENDPOINTS['Phone Agent'];
+      const res = await fetch(endpoint, { method: 'POST', headers: {'Accept':'application/json','Content-Type':'application/json'}, body: JSON.stringify(data) });
       if (!res.ok) throw new Error('Submit failed');
       root.querySelectorAll('.modal-step').forEach(s => s.classList.remove('active'));
       success.style.display = 'block';
