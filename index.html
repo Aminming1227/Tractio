@@ -435,7 +435,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
           <li>You provide text &amp; photos; we bring it to life</li>
           <li>We help polish and organize your content</li>
         </ul>
-        <button class="btn btn-primary" data-trac-open-quote data-trac-service="Website">Get a Website Quote</button>
+        <button class="btn btn-primary" data-trac-open-web>Get a Website Quote</button>
         <p class="web-note">Need changes later? Updates are $50 each — text, photos, hours, whatever you need.</p>
       </div>
     </div>
@@ -449,6 +449,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         <div class="faq-item reveal"><button class="faq-q">Do I need to be tech-savvy to use it?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Not at all. Tractio is built for busy owners who would rather be out on the job than learning new software. The dashboard works on your phone, we handle all the technical setup, and we are one text away whenever you need anything.</div></div></div>
         <div class="faq-item reveal"><button class="faq-q">What businesses is Tractio built for?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Any business where every missed call or slow follow-up is real money on the table. If you rely on inbound leads and need fast, consistent follow-up to win work, Tractio is built for you.</div></div></div>
         <div class="faq-item reveal"><button class="faq-q">What happens if I want to cancel?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Cancel anytime — no long-term contracts and no cancellation fees. Just send us a message and we will wind your system down at the end of your current billing cycle.</div></div></div>
+        <div class="faq-item reveal"><button class="faq-q">Do you build websites too?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes — alongside the AI phone agent, we build clean, custom, mobile-friendly websites for small local businesses, starting at $500. No cookie-cutter templates — just a site built from scratch that makes your business look professional and helps customers find you.</div></div></div>
+        <div class="faq-item reveal"><button class="faq-q">What's included in a website?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">A custom, mobile-friendly website, a simple logo included (or we use the one you already have), and we build the whole thing from the text, photos, and business info you provide.</div></div></div>
+        <div class="faq-item reveal"><button class="faq-q">Do I need to provide my own content for the website?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes — you provide your text, photos, and business info, and we bring it to life on the page. We'll help polish and organize everything so it looks its best. You can email any photos you want on the site to hello.tractio@gmail.com.</div></div></div>
+        <div class="faq-item reveal"><button class="faq-q">What if I need changes to my website later?<span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Updates are $50 each — text, photos, hours, whatever you need. Just reach out anytime and we'll make the change.</div></div></div>
       </div>
     </div>
   </section>
@@ -547,6 +551,28 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
         </div>
         <div class="form-success" id="trac-formSuccess"><strong>You're booked!</strong><br>Your intro call is confirmed. We'll send the Zoom link to your email shortly.</div>
         <div class="form-error" id="trac-formError">Something went wrong. Please email us directly at <a href="mailto:hello.tractio@gmail.com">hello.tractio@gmail.com</a>.</div>
+      </form>
+    </div>
+  </div>
+  <div class="modal-overlay" id="trac-webModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="trac-webModalClose" aria-label="Close">×</button>
+      <form id="trac-webForm" novalidate>
+        <input type="hidden" name="service" value="Website" />
+        <div class="modal-step-num">WEBSITE REQUEST</div>
+        <h3>Tell Us About Your Website</h3>
+        <p style="color:#A1A1A6;margin-bottom:24px;font-size:14px">Share the details and we'll get back to you with a quote. No call required.</p>
+        <div class="form-group"><label>First Name</label><input type="text" name="firstName" required /><div class="err">Please enter your first name.</div></div>
+        <div class="form-group"><label>Last Name</label><input type="text" name="lastName" required /><div class="err">Please enter your last name.</div></div>
+        <div class="form-group"><label>Email</label><input type="email" name="email" required /><div class="err">Please enter a valid email.</div></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" required /><div class="err">Please enter a valid phone number.</div></div>
+        <div class="form-group"><label>Business Name</label><input type="text" name="businessName" required /><div class="err">Please enter your business name.</div></div>
+        <div class="form-group"><label>Describe what you want your website to include</label><textarea name="websiteDetails" rows="5" placeholder="Services, pages, style, colors, examples of sites you like — anything you want on your site." required></textarea><div class="err">Please tell us a bit about what you want.</div></div>
+        <p style="color:#A1A1A6;margin-bottom:20px;font-size:13px;line-height:1.6">Have photos you'd like on your site? Email them to <a href="mailto:hello.tractio@gmail.com" style="color:#F97316;text-decoration:underline">hello.tractio@gmail.com</a> and we'll add them in.</p>
+        <div class="form-group"><div class="cf-turnstile" data-sitekey="0x4AAAAAADXTTH75JvNuRpdN" data-theme="dark"></div></div>
+        <div class="modal-actions"><button type="submit" class="btn btn-primary">Send Website Request</button></div>
+        <div class="form-success" id="trac-webSuccess"><strong>Thanks! We got your website request.</strong><br>Send any photos you'd like on your site to <a href="mailto:hello.tractio@gmail.com">hello.tractio@gmail.com</a> and we'll be in touch.</div>
+        <div class="form-error" id="trac-webError">Something went wrong. Please email us directly at <a href="mailto:hello.tractio@gmail.com">hello.tractio@gmail.com</a>.</div>
       </form>
     </div>
   </div>
@@ -778,6 +804,72 @@ function initTractio() {
       error.style.display = 'block';
     }
   });
+
+  // Website request form — separate, single-step form for the website service.
+  // No booking / date / time. Submits to the Website Formspree endpoint.
+  (function initWebForm() {
+    const webModal = document.getElementById('trac-webModal');
+    const webForm = document.getElementById('trac-webForm');
+    if (!webModal || !webForm) return;
+    const webClose = document.getElementById('trac-webModalClose');
+    const webSuccess = document.getElementById('trac-webSuccess');
+    const webError = document.getElementById('trac-webError');
+    function resetWebForm() {
+      webForm.reset();
+      webSuccess.style.display = 'none';
+      webError.style.display = 'none';
+      webForm.querySelectorAll('.form-group.invalid').forEach(g => g.classList.remove('invalid'));
+      webForm.querySelectorAll('.form-group, .modal-actions, .modal-step-num, h3, p').forEach(el => { el.style.display = ''; });
+      if (window.turnstile && typeof window.turnstile.reset === 'function') { try { window.turnstile.reset(); } catch (e) {} }
+    }
+    function openWebModal() {
+      resetWebForm();
+      webModal.classList.add('open');
+      webModal.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeWebModal() { webModal.classList.remove('open'); webModal.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; }
+    root.querySelectorAll('[data-trac-open-web]').forEach(b => b.addEventListener('click', openWebModal));
+    webClose.addEventListener('click', closeWebModal);
+    webModal.addEventListener('click', e => { if (e.target === webModal) closeWebModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && webModal.classList.contains('open')) closeWebModal(); });
+    webForm.querySelectorAll('input, textarea').forEach(f => {
+      f.addEventListener('input', () => f.closest('.form-group') && f.closest('.form-group').classList.remove('invalid'));
+    });
+    function validateWebForm() {
+      let ok = true;
+      webForm.querySelectorAll('input[required], textarea[required]').forEach(f => {
+        const group = f.closest('.form-group');
+        let valid = !!f.value.trim();
+        if (valid && f.type === 'email') valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value.trim());
+        if (valid && f.type === 'tel') valid = /[\d]{7,}/.test(f.value.replace(/\D/g,''));
+        group.classList.toggle('invalid', !valid);
+        if (!valid) ok = false;
+      });
+      return ok;
+    }
+    webForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!validateWebForm()) return;
+      const data = Object.fromEntries(new FormData(webForm).entries());
+      webSuccess.style.display = 'none'; webError.style.display = 'none';
+      const tsInput = webForm.querySelector('input[name="cf-turnstile-response"]');
+      if (!tsInput || !tsInput.value) {
+        alert('Please wait for the security check to load, then try again.');
+        return;
+      }
+      data['cf-turnstile-response'] = tsInput.value;
+      data._subject = 'Tractio — Website request';
+      try {
+        const res = await fetch(SERVICE_ENDPOINTS['Website'], { method: 'POST', headers: {'Accept':'application/json','Content-Type':'application/json'}, body: JSON.stringify(data) });
+        if (!res.ok) throw new Error('Submit failed');
+        webForm.querySelectorAll('.form-group, .modal-actions, .modal-step-num, h3, p').forEach(el => { el.style.display = 'none'; });
+        webSuccess.style.display = 'block';
+      } catch (err) {
+        webError.style.display = 'block';
+      }
+    });
+  })();
 }
 
 window.addEventListener('load', function() {
